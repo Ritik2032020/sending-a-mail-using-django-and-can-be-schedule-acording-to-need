@@ -1,0 +1,27 @@
+<!-- email_app/templates/email_app/send_email.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Schedule Email</title>
+</head>
+<body>
+    <h1>Schedule Email</h1>
+    <form method="POST" action="">
+        {% csrf_token %}
+        <label for="recipients">Recipients (comma-separated):</label><br>
+        <input type="text" name="recipients" id="recipients" required><br><br>
+
+        <label for="subject">Subject:</label><br>
+        <input type="text" name="subject" id="subject" required><br><br>
+
+        <label for="message">Message:</label><br>
+        <textarea name="message" id="message" rows="4" cols="50" required></textarea><br><br>
+
+        <label for="send_at">Send At (YYYY-MM-DD HH:MM):</label><br>
+        <input type="text" name="send_at" id="send_at" required><br><br>
+
+        <input type="submit" value="Schedule Email">
+    </form>
+</body>
+</html>
